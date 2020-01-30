@@ -16,7 +16,7 @@ import org.jetbrains.kotlin.idea.debugger.coroutine.util.logger
 
 class CoroutineViewDebugSessionListener(
     private val session: XDebugSession,
-    private val xCoroutineView: XCoroutineView
+    private val xCoroutineView: XCoroutineView,
 ) : XDebugSessionListener {
     val log by logger
 
@@ -50,7 +50,7 @@ class CoroutineViewDebugSessionListener(
     }
 
     fun renew(suspendContext: XSuspendContext) {
-        if(suspendContext is SuspendContextImpl && suspendContext.suspendPolicy == EventRequest.SUSPEND_ALL) {
+        if (suspendContext is SuspendContextImpl) {
             DebuggerUIUtil.invokeLater {
                 xCoroutineView.renewRoot(suspendContext)
             }
