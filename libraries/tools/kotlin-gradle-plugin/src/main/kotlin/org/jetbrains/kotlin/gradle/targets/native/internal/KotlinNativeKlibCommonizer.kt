@@ -75,7 +75,7 @@ internal fun runCommonizerInBulk(
 private fun callCommonizerCLI(commandLineParameters: List<String>) {
     if (commandLineParameters.isEmpty()) return
 
-    // TODO: implement
+    // TODO: call KotlinNativeKlibCommonizerToolRunner
 }
 
 private fun renameDirectory(source: File, destination: File) {
