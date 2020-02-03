@@ -1,7 +1,6 @@
 @file:Suppress("HasPlatformType")
 
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-import proguard.gradle.ProGuardTask
 import java.util.regex.Pattern.quote
 
 description = "Kotlin Compiler"
@@ -245,13 +244,16 @@ val packCompiler by task<ShadowJar> {
     }
 }
 
-val proguard by task<ProGuardTask> {
+val proguard by task<CacheableProguardTask> {
     dependsOn(packCompiler)
     configuration("$rootDir/compiler/compiler.pro")
 
     val outputJar = fileFrom(buildDir, "libs", "$compilerBaseName-after-proguard.jar")
+    val packedCompilerFile = packCompiler.get().outputs.files.singleFile
 
-    inputs.files(packCompiler.get().outputs.files.singleFile)
+    inputs.files(packedCompilerFile)
+        .withPathSensitivity(PathSensitivity.RELATIVE)
+
     outputs.file(outputJar)
 
     libraryjars(mapOf("filter" to "!META-INF/versions/**"), proguardLibraries)
@@ -260,7 +262,7 @@ val proguard by task<ProGuardTask> {
 
     // This properties are used by proguard config compiler.pro
     doFirst {
-        System.setProperty("kotlin-compiler-jar-before-shrink", packCompiler.get().outputs.files.singleFile.canonicalPath)
+        System.setProperty("kotlin-compiler-jar-before-shrink", packedCompilerFile.canonicalPath)
         System.setProperty("kotlin-compiler-jar", outputJar.canonicalPath)
     }
 }
