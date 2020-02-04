@@ -10,139 +10,6 @@ import org.gradle.api.tasks.*
 @CacheableTask
 open class CacheableProguardTask : proguard.gradle.ProGuardTask() {
 
-    @Input
-    override fun getOutJarFilters(): MutableList<Any?> = super.getOutJarFilters()
-
-    @Optional
-    @Input
-    override fun getrenamesourcefileattribute(): Any? = super.getrenamesourcefileattribute()
-
-    @Optional
-    @Input
-    override fun getprintusage(): Any? = super.getprintusage()
-
-    @Optional
-    @Input
-    override fun getforceprocessing(): Any? = super.getforceprocessing()
-
-    @Input
-    override fun getInJarFilters(): MutableList<Any?> = super.getInJarFilters()
-
-    @Optional
-    @Input
-    override fun getdontwarn(): Any? = super.getdontwarn()
-
-    @Optional
-    @Input
-    override fun getaddconfigurationdebugging(): Any? = super.getaddconfigurationdebugging()
-
-    @Optional
-    @Input
-    override fun getallowaccessmodification(): Any? = super.getallowaccessmodification()
-
-    @Optional
-    @Input
-    override fun getignorewarnings(): Any? = super.getignorewarnings()
-
-    @Optional
-    @Input
-    override fun getkeepdirectories(): Any? = super.getkeepdirectories()
-
-    @Optional
-    @Input
-    override fun getuseuniqueclassmembernames(): Any? = super.getuseuniqueclassmembernames()
-
-    @Optional
-    @Input
-    override fun getmicroedition(): Any? = super.getmicroedition()
-
-    @Optional
-    @Input
-    override fun getandroid(): Any? = super.getandroid()
-
-    @Optional
-    @Input
-    override fun getoverloadaggressively(): Any? = super.getoverloadaggressively()
-
-    @Optional
-    @Input
-    override fun getdontusemixedcaseclassnames(): Any? = super.getdontusemixedcaseclassnames()
-
-    @Optional
-    @Input
-    override fun getdontnote(): Any? = super.getdontnote()
-
-    @Internal
-    override fun getInJarFiles(): MutableList<Any?> = super.getInJarFiles()
-
-    @Input
-    override fun getInJarCounts(): MutableList<Any?> = super.getInJarCounts()
-
-    @Optional
-    @Input
-    override fun getdontpreverify(): Any? = super.getdontpreverify()
-
-    @Optional
-    @Input
-    override fun getverbose(): Any? = super.getverbose()
-
-    @Optional
-    @Input
-    override fun getskipnonpubliclibraryclasses(): Any? = super.getskipnonpubliclibraryclasses()
-
-    @Optional
-    @Input
-    override fun getdontoptimize(): Any? = super.getdontoptimize()
-
-    @Optional
-    @Input
-    override fun getdump(): Any? = super.getdump()
-
-    @InputFiles
-    @PathSensitive(PathSensitivity.RELATIVE)
-    override fun getInJarFileCollection(): FileCollection = super.getInJarFileCollection()
-
-    @Optional
-    @Input
-    override fun getdontobfuscate(): Any? = super.getdontobfuscate()
-
-    @Input
-    override fun getLibraryJarFilters(): MutableList<Any?> = super.getLibraryJarFilters()
-
-    @Optional
-    @Input
-    override fun getprintmapping(): Any? = super.getprintmapping()
-
-    @Optional
-    @Input
-    override fun getdontshrink(): Any? = super.getdontshrink()
-
-    @Optional
-    @Input
-    override fun getkeepattributes(): Any? = super.getkeepattributes()
-
-    @Internal
-    override fun getOutJarFileCollection(): FileCollection = super.getOutJarFileCollection()
-
-    @Optional
-    @Input
-    override fun getdontskipnonpubliclibraryclassmembers(): Any? = super.getdontskipnonpubliclibraryclassmembers()
-
-    @Optional
-    @Input
-    override fun getprintconfiguration(): Any? = super.getprintconfiguration()
-
-    @Optional
-    @Input
-    override fun getmergeinterfacesaggressively(): Any? = super.getmergeinterfacesaggressively()
-
-    @Input
-    override fun getConfigurationFiles(): MutableList<Any?> = super.getConfigurationFiles()
-
-    @Optional
-    @Input
-    override fun getkeeppackagenames(): Any? = super.getkeeppackagenames()
-
     @InputFiles
     @PathSensitive(PathSensitivity.RELATIVE)
     override fun getLibraryJarFileCollection(): FileCollection = super.getLibraryJarFileCollection()
@@ -151,35 +18,135 @@ open class CacheableProguardTask : proguard.gradle.ProGuardTask() {
     @PathSensitive(PathSensitivity.RELATIVE)
     override fun getConfigurationFileCollection(): FileCollection = super.getConfigurationFileCollection()
 
-    @Optional
-    @Input
+    @InputFiles
+    @PathSensitive(PathSensitivity.RELATIVE)
+    override fun getInJarFileCollection(): FileCollection = super.getInJarFileCollection()
+
+    
+    @Internal
+    override fun getOutJarFilters(): MutableList<Any?> = super.getOutJarFilters()
+
+    @Internal
+    override fun getrenamesourcefileattribute(): Any? = super.getrenamesourcefileattribute()
+
+    @Internal
+    override fun getprintusage(): Any? = super.getprintusage()
+
+    @Internal
+    override fun getforceprocessing(): Any? = super.getforceprocessing()
+
+    @Internal
+    override fun getInJarFilters(): MutableList<Any?> = super.getInJarFilters()
+
+    @Internal
+    override fun getdontwarn(): Any? = super.getdontwarn()
+
+    @Internal
+    override fun getaddconfigurationdebugging(): Any? = super.getaddconfigurationdebugging()
+
+    @Internal
+    override fun getallowaccessmodification(): Any? = super.getallowaccessmodification()
+
+    @Internal
+    override fun getignorewarnings(): Any? = super.getignorewarnings()
+
+    @Internal
+    override fun getkeepdirectories(): Any? = super.getkeepdirectories()
+
+    @Internal
+    override fun getuseuniqueclassmembernames(): Any? = super.getuseuniqueclassmembernames()
+
+    @Internal
+    override fun getmicroedition(): Any? = super.getmicroedition()
+
+    @Internal
+    override fun getandroid(): Any? = super.getandroid()
+
+    @Internal
+    override fun getoverloadaggressively(): Any? = super.getoverloadaggressively()
+
+    @Internal
+    override fun getdontusemixedcaseclassnames(): Any? = super.getdontusemixedcaseclassnames()
+
+    @Internal
+    override fun getdontnote(): Any? = super.getdontnote()
+
+    @Internal
+    override fun getInJarFiles(): MutableList<Any?> = super.getInJarFiles()
+
+    @Internal
+    override fun getInJarCounts(): MutableList<Any?> = super.getInJarCounts()
+
+    @Internal
+    override fun getdontpreverify(): Any? = super.getdontpreverify()
+
+    @Internal
+    override fun getverbose(): Any? = super.getverbose()
+
+    @Internal
+    override fun getskipnonpubliclibraryclasses(): Any? = super.getskipnonpubliclibraryclasses()
+
+    @Internal
+    override fun getdontoptimize(): Any? = super.getdontoptimize()
+
+    @Internal
+    override fun getdump(): Any? = super.getdump()
+
+    @Internal
+    override fun getdontobfuscate(): Any? = super.getdontobfuscate()
+
+    @Internal
+    override fun getLibraryJarFilters(): MutableList<Any?> = super.getLibraryJarFilters()
+
+    @Internal
+    override fun getprintmapping(): Any? = super.getprintmapping()
+
+    @Internal
+    override fun getdontshrink(): Any? = super.getdontshrink()
+
+    @Internal
+    override fun getkeepattributes(): Any? = super.getkeepattributes()
+
+    @Internal
+    override fun getOutJarFileCollection(): FileCollection = super.getOutJarFileCollection()
+
+    @Internal
+    override fun getdontskipnonpubliclibraryclassmembers(): Any? = super.getdontskipnonpubliclibraryclassmembers()
+
+    @Internal
+    override fun getprintconfiguration(): Any? = super.getprintconfiguration()
+
+    @Internal
+    override fun getmergeinterfacesaggressively(): Any? = super.getmergeinterfacesaggressively()
+
+    @Internal
+    override fun getConfigurationFiles(): MutableList<Any?> = super.getConfigurationFiles()
+
+    @Internal
+    override fun getkeeppackagenames(): Any? = super.getkeeppackagenames()
+
+    @Internal
     override fun getprintseeds(): Any? = super.getprintseeds()
 
-    @Optional
-    @Input
+    @Internal
     override fun getadaptresourcefilenames(): Any? = super.getadaptresourcefilenames()
 
-    @Optional
-    @Input
+    @Internal
     override fun getrepackageclasses(): Any? = super.getrepackageclasses()
 
-    @Optional
-    @Input
+    @Internal
     override fun getadaptresourcefilecontents(): Any? = super.getadaptresourcefilecontents()
 
-    @Optional
-    @Input
+    @Internal
     override fun getflattenpackagehierarchy(): Any? = super.getflattenpackagehierarchy()
 
-    @Optional
-    @Input
+    @Internal
     override fun getadaptclassstrings(): Any? = super.getadaptclassstrings()
 
     @Internal
     override fun getLibraryJarFiles(): MutableList<Any?> = super.getLibraryJarFiles()
 
-    @Optional
-    @Input
+    @Internal
     override fun getkeepparameternames(): Any? = super.getkeepparameternames()
 
     @Internal
