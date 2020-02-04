@@ -202,7 +202,7 @@ public class KotlinCallHierarchyNodeDescriptor extends HierarchyNodeDescriptor i
         }
 
         return containerText != null ? containerText + "." + elementText : elementText;
-}
+    }
 
     public static String renderNamedFunction(@NotNull FunctionDescriptor descriptor) {
         DeclarationDescriptor descriptorForName = descriptor instanceof ConstructorDescriptor
