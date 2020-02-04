@@ -19,6 +19,10 @@ class HasThrowsOnOverride : Base1 {
     <!THROWS_ON_OVERRIDE!>@Throws(Exception1::class)<!> override fun foo() {}
 }
 
+class HasThrowsWithEmptyListOnOverride : Base1 {
+    <!THROWS_ON_OVERRIDE!>@Throws<!> override fun foo() {}
+}
+
 interface Base2 {
     @Throws(Exception2::class) fun foo()
 }

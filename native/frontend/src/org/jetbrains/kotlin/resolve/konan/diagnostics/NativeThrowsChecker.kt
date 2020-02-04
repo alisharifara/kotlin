@@ -28,12 +28,13 @@ object NativeThrowsChecker : DeclarationChecker {
         val throwsAnnotation = descriptor.annotations.findAnnotation(throwsFqName) ?: return
         val element = DescriptorToSourceUtils.getSourceFromAnnotation(throwsAnnotation) ?: declaration
 
-        if (throwsAnnotation.getVariadicArguments().isEmpty()) {
-            context.trace.report(ErrorsNative.THROWS_LIST_EMPTY.on(element))
-        }
-
         if (descriptor is CallableMemberDescriptor && descriptor.overriddenDescriptors.isNotEmpty()) {
             context.trace.report(ErrorsNative.THROWS_ON_OVERRIDE.on(element))
+            return
+        }
+
+        if (throwsAnnotation.getVariadicArguments().isEmpty()) {
+            context.trace.report(ErrorsNative.THROWS_LIST_EMPTY.on(element))
         }
     }
 
